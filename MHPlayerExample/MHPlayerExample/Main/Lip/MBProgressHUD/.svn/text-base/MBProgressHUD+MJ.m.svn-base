@@ -1,0 +1,152 @@
+//
+//  MBProgressHUD+MJ.m
+//
+//  Created by mj on 13-4-18.
+//  Copyright (c) 2013年 itcast. All rights reserved.
+//
+
+#import "MBProgressHUD+MJ.h"
+//导航栏高度
+static CGFloat const NavigationBarHeight = 64;
+//tabBar高度
+static CGFloat const TabBarHeight = 49;
+
+@implementation MBProgressHUD (MJ)
+#pragma mark 显示信息
++ (void)show:(NSString *)text icon:(NSString *)icon view:(UIView *)view
+{
+    if (view == nil)
+    {
+        view = [[UIApplication sharedApplication].delegate window];
+        if (!view) {
+            view = [[[UIApplication sharedApplication] windows] lastObject];
+        }
+    }
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.opacity = 0.45;
+    hud.labelText = text;
+    // 设置图片
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", icon]]];
+    // 再设置模式
+    hud.mode = MBProgressHUDModeCustomView;
+    
+    // 隐藏时候从父控件中移除
+    hud.removeFromSuperViewOnHide = YES;
+    
+    // 1秒之后再消失
+    [hud hide:YES afterDelay:1.0f];
+}
+
+#pragma mark 显示错误信息
++ (void)showError:(NSString *)error toView:(UIView *)view{
+    [self show:error icon:@"error.png" view:view];
+}
+
++ (void)showSuccess:(NSString *)success toView:(UIView *)view
+{
+    [self show:success icon:@"success.png" view:view];
+}
+
+#pragma mark 显示一些信息
++ (MBProgressHUD *)showMessage:(NSString *)message toView:(UIView *)view
+{
+    BOOL isNil = NO;
+    if (view == nil)
+    {
+        isNil = YES;
+        view = [[UIApplication sharedApplication].delegate window];
+        if (!view) {
+            view = [[[UIApplication sharedApplication] windows] lastObject];
+        }
+    }
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.opacity = 0.45;
+    hud.labelText = message;
+    // 隐藏时候从父控件中移除
+    hud.removeFromSuperViewOnHide = YES;
+    // YES代表需要蒙版效果
+//    hud.color = [UIColor black25PercentColor];
+    hud.dimBackground = isNil;
+    return hud;
+}
+
++ (void)showSuccess:(NSString *)success
+{
+    [self showSuccess:success toView:nil];
+}
+
++ (void)showError:(NSString *)error
+{
+    [self showError:error toView:nil];
+}
+
++ (MBProgressHUD *)showMessage:(NSString *)message
+{
+    return [self showMessage:message toView:nil];
+}
+
++ (void)hideHUDForView:(UIView *)view
+{
+    if (view == nil)
+    {
+        view = [[UIApplication sharedApplication].delegate window];
+        if (!view) {
+            view = [[[UIApplication sharedApplication] windows] lastObject];
+        }
+    }
+    [self hideHUDForView:view animated:YES];
+}
+
++ (void)hideHUD
+{
+    [self hideHUDForView:nil];
+}
+
+
+
+
+
+//MKH  这个默认显示上方
++ (void)MKHShowHint:(NSString *)hint
+{
+    [self MKHHideHUD];
+    //显示提示信息
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    [self MKHShowHint:hint yOffset:(-(view.height*0.5-NavigationBarHeight-NavigationBarHeight*0.5))];
+}
+
+// 从默认(showHint:)显示的位置再往上(下)yOffset
++ (void)MKHShowHint:(NSString *)hint yOffset:(float)yOffset
+{
+    [self MKHHideHUD];
+    //显示提示信息
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.userInteractionEnabled = NO;
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = hint;
+    hud.opacity = 0.45;
+    hud.margin = 10.f;
+    hud.yOffset = yOffset;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:2.0f];
+}
+
+
+//显示在下方
++ (void)MKHShowBottomHint:(NSString *)hint
+{
+    [self MKHHideHUD];
+    //显示提示信息
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    [self MKHShowHint:hint yOffset:((view.height*0.5-TabBarHeight-NavigationBarHeight*0.5))];
+}
+
++ (void)MKHHideHUD
+{
+    [self hideHUDForView:nil];
+}
+@end
