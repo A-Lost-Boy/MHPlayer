@@ -33,7 +33,7 @@
 
 #### 销毁 <必须要手动调用>
 ```objc
--(void)pause;
+-(void)destroy;
 ```
 
 ## 期待
