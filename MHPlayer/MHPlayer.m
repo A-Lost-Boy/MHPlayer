@@ -69,8 +69,9 @@
 
 #import "MHPlayer.h"
 #import <AVFoundation/AVFoundation.h>
-
-
+#import "MBProgressHUD+MH.h"
+#import "Masonry.h"
+#import "Constant.h"
 /**
  *  发送单击视频的通知
  */
@@ -695,7 +696,7 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
     
     if (playerItem.status == AVPlayerItemStatusReadyToPlay)
     {
-#warning Mike_He 温馨提示
+
         //通过这个 可能会返回一个不正确的值 通过通过CMTimeGetSeconds(time)得到的是1秒,而同时[asset duration]返回的却是正确的数据.
         return([playerItem duration]);
     }
@@ -794,7 +795,7 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
     if (!playerItem) return;
     
    
-#warning Mike_He 如果你添加的观察者添加了上下下文 context 你移除的时候必须也要移除对应的上下文的 context 的观察者
+// Mike_He 如果你添加的观察者添加了上下下文 context 你移除的时候必须也要移除对应的上下文的 context 的观察者
     [playerItem removeObserver:self forKeyPath:@"status" context:PlayViewStatusObservationContext];
     
     
@@ -1096,7 +1097,7 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
 //全屏显示
 - (void)fullScreenWithInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-#warning  Mike_He 为何从父类删除了   还不销毁
+//  Mike_He 为何从父类删除了   还不销毁
     /**
      *  解释: 1.http://www.jianshu.com/p/6a222d693d50
      */
@@ -1340,7 +1341,7 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
         self.playSlider.maximumValue = self.duration;
         
         //可以设置播放
-#warning Mike_He 这个可以先不写 看你的需求是什么  如果是一进来 就立即播放 就打开这个  否则需要手动调用播放
+// 这个可以先不写 看你的需求是什么  如果是一进来 就立即播放 就打开这个  否则需要手动调用播放
         //        if (self.player.rate !=1.f) [self.player play];
         
         

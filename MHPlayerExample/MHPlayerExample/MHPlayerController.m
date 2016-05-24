@@ -22,7 +22,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-#warning Mike_He  切记 这里必须要销毁掉播放器哦
+// Mike_He  切记 这里必须要销毁掉播放器哦
     [self.player destroy];
 }
 

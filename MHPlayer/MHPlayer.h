@@ -106,6 +106,7 @@ UIKIT_EXTERN NSString * const MHPlayerFullScreenButtonClickedNotification;
 -(void)pause;
 /**
  *  手动销毁播放器
+ *  根据苹果官方文档说明：使用NSTimer时，timer会自动retain一次target和userInfo参数。由此而导致可能在使用NSTimer时，出现UIViewController不能释放的问题。
  *  由于这个播放器里面使用了NSTimer 这个类导致播放器释放不掉 需要手动释放
  *  切记：必须要在使用的类中的 dealloc 里面 使用  否则会导致播放器  和控制器都释放不了
  *  解释:http://www.jianshu.com/p/2287344894ae
