@@ -69,7 +69,6 @@
 
 #import "MHPlayer.h"
 #import <AVFoundation/AVFoundation.h>
-#import "MBProgressHUD+MH.h"
 #import "Masonry.h"
 #import "Constant.h"
 /**

@@ -122,14 +122,6 @@ self.automaticallyAdjustsScrollViewInsets = NO;\
 #define kDocumentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject]
 
 
-
-
-
-
-
-
-
-
 #import "MHConstant.h"
 #import "MBProgressHUD+MH.h"
 #import "Colours.h"
