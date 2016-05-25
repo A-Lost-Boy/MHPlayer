@@ -67,6 +67,7 @@
 #import "MHCommon.h"
 #import "Colours.h"
 #import "Masonry.h"
+#import "MBProgressHUD.h"
 #import "MBProgressHUD+MH.h"
 /**
  *  发送单击视频的通知

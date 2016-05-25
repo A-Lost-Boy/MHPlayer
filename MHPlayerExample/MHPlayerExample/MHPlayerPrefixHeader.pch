@@ -17,6 +17,6 @@
 #import <Foundation/Foundation.h>
 
 #import "MHCommon.h"
-
+#import "MBProgressHUD+MH.h"
 
 #endif
