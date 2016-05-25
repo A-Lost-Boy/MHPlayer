@@ -70,7 +70,7 @@
 #import "MHPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Masonry.h"
-#import "Constant.h"
+#import "MHCommon.h"
 /**
  *  发送单击视频的通知
  */
@@ -109,21 +109,7 @@ static CGFloat const MHPlayerAutoDismissStatusViewDuration = 5.0f;
 
 
 
-#define MHVideoSrcName(file) [@"MHPlayer.bundle" stringByAppendingPathComponent:file]
-#define MHVideoFrameworkSrcName(file) [@"Frameworks/MHPlayer.framework/MHPlayer.bundle" stringByAppendingPathComponent:file]
-#define kHalfWidth  (self.frame.size.width * 0.5f)
-#define kHalfHeight (self.frame.size.height * 0.5f)
 
-//1.日记输出宏
-#ifdef DEBUG // 调试状态, 打开LOG功能
-#define MHLog(...) NSLog(__VA_ARGS__)
-#else // 发布状态, 关闭LOG功能
-#define MHLog(...)
-#endif
-
-
-//打印方法
-#define MHLogFunc MHLog(@"%s", __func__)
 
 /**
  *  视频播放状态

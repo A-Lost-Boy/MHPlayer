@@ -1,13 +1,13 @@
 //
-//  Const.h
-//  MKHNetworking
+//  MHCommon.h
+//  MHPlayer
 //
 //  Created by apple on 16/3/8.
 //  Copyright © 2016年 Mike. All rights reserved.
 //
 
-#ifndef Constant_h
-#define Constant_h
+#ifndef MHCommon_h
+#define MHCommon_h
 
 /**
  *  比较实用的宏定义
@@ -121,6 +121,22 @@ self.automaticallyAdjustsScrollViewInsets = NO;\
 //15.App DocumentDirectory
 #define kDocumentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject]
 
+
+#define MHVideoSrcName(file) [@"MHPlayer.bundle" stringByAppendingPathComponent:file]
+#define MHVideoFrameworkSrcName(file) [@"Frameworks/MHPlayer.framework/MHPlayer.bundle" stringByAppendingPathComponent:file]
+#define kHalfWidth  (self.frame.size.width * 0.5f)
+#define kHalfHeight (self.frame.size.height * 0.5f)
+
+//1.日记输出宏
+#ifdef DEBUG // 调试状态, 打开LOG功能
+#define MHLog(...) NSLog(__VA_ARGS__)
+#else // 发布状态, 关闭LOG功能
+#define MHLog(...)
+#endif
+
+
+//打印方法
+#define MHLogFunc MHLog(@"%s", __func__)
 
 #import "MHConstant.h"
 #import "MBProgressHUD+MH.h"
