@@ -62,15 +62,12 @@
  
  */
 
-
-
-
-
-
 #import "MHPlayer.h"
 #import <AVFoundation/AVFoundation.h>
-#import "Masonry.h"
 #import "MHCommon.h"
+#import "Colours.h"
+#import "Masonry.h"
+#import "MBProgressHUD+MH.h"
 /**
  *  发送单击视频的通知
  */

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182B35B31CF546A80096574B /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 182B35B01CF546A80096574B /* MBProgressHUD.bundle */; };
+		182B35B41CF546A80096574B /* MBProgressHUD+MH.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B35B21CF546A80096574B /* MBProgressHUD+MH.m */; };
 		1880658C1CE18EB8009CD9DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880658B1CE18EB8009CD9DE /* main.m */; };
 		1880658F1CE18EB8009CD9DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880658E1CE18EB8009CD9DE /* AppDelegate.m */; };
 		188065971CE18EB8009CD9DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188065961CE18EB8009CD9DE /* Assets.xcassets */; };
@@ -22,8 +24,6 @@
 		1880660F1CE19041009CD9DE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065CA1CE19041009CD9DE /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		188066101CE19041009CD9DE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065CC1CE19041009CD9DE /* View+MASAdditions.m */; };
 		188066111CE19041009CD9DE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065CF1CE19041009CD9DE /* ViewController+MASAdditions.m */; };
-		188066121CE19041009CD9DE /* MBProgressHUD+MH.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065D21CE19041009CD9DE /* MBProgressHUD+MH.m */; };
-		188066131CE19041009CD9DE /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 188065D31CE19041009CD9DE /* MBProgressHUD.bundle */; };
 		188066141CE19041009CD9DE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065D51CE19041009CD9DE /* MBProgressHUD.m */; };
 		188066151CE19041009CD9DE /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065D81CE19041009CD9DE /* MKAnnotationView+WebCache.m */; };
 		188066161CE19041009CD9DE /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 188065DA1CE19041009CD9DE /* NSData+ImageContentType.m */; };
@@ -62,6 +62,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182B35A91CF541560096574B /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		182B35B01CF546A80096574B /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		182B35B11CF546A80096574B /* MBProgressHUD+MH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MH.h"; sourceTree = "<group>"; };
+		182B35B21CF546A80096574B /* MBProgressHUD+MH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MH.m"; sourceTree = "<group>"; };
 		187EFABC1CF45F8300BE5A8E /* MHCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHCommon.h; sourceTree = "<group>"; };
 		188065871CE18EB8009CD9DE /* MHPlayerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHPlayerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1880658B1CE18EB8009CD9DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,9 +103,6 @@
 		188065CD1CE19041009CD9DE /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		188065CE1CE19041009CD9DE /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		188065CF1CE19041009CD9DE /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		188065D11CE19041009CD9DE /* MBProgressHUD+MH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MH.h"; sourceTree = "<group>"; };
-		188065D21CE19041009CD9DE /* MBProgressHUD+MH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MH.m"; sourceTree = "<group>"; };
-		188065D31CE19041009CD9DE /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		188065D41CE19041009CD9DE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		188065D51CE19041009CD9DE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		188065D71CE19041009CD9DE /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -242,6 +243,9 @@
 		188065B01CE19041009CD9DE /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				182B35B01CF546A80096574B /* MBProgressHUD.bundle */,
+				182B35B11CF546A80096574B /* MBProgressHUD+MH.h */,
+				182B35B21CF546A80096574B /* MBProgressHUD+MH.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -308,9 +312,6 @@
 		188065D01CE19041009CD9DE /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				188065D11CE19041009CD9DE /* MBProgressHUD+MH.h */,
-				188065D21CE19041009CD9DE /* MBProgressHUD+MH.m */,
-				188065D31CE19041009CD9DE /* MBProgressHUD.bundle */,
 				188065D41CE19041009CD9DE /* MBProgressHUD.h */,
 				188065D51CE19041009CD9DE /* MBProgressHUD.m */,
 			);
@@ -379,6 +380,7 @@
 				188065FB1CE19041009CD9DE /* Common.h */,
 				188065FD1CE19041009CD9DE /* MHConstant.h */,
 				188065FE1CE19041009CD9DE /* MHConstant.m */,
+				182B35A91CF541560096574B /* Constant.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -518,10 +520,10 @@
 			files = (
 				1880662D1CE190E5009CD9DE /* MHPlayer.bundle in Resources */,
 				188066261CE19041009CD9DE /* logo.png in Resources */,
-				188066131CE19041009CD9DE /* MBProgressHUD.bundle in Resources */,
 				188065971CE18EB8009CD9DE /* Assets.xcassets in Resources */,
 				188066271CE19041009CD9DE /* play.png in Resources */,
 				188066281CE19041009CD9DE /* video_play_btn_bg@2x.png in Resources */,
+				182B35B31CF546A80096574B /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,13 +551,13 @@
 				1880660B1CE19041009CD9DE /* MASLayoutConstraint.m in Sources */,
 				1880662E1CE190E5009CD9DE /* MHPlayer.m in Sources */,
 				188066191CE19041009CD9DE /* SDWebImageDecoder.m in Sources */,
-				188066121CE19041009CD9DE /* MBProgressHUD+MH.m in Sources */,
 				1880661E1CE19041009CD9DE /* UIButton+WebCache.m in Sources */,
 				1880661C1CE19041009CD9DE /* SDWebImageManager.m in Sources */,
 				1880660E1CE19041009CD9DE /* NSArray+MASAdditions.m in Sources */,
 				188066231CE19041009CD9DE /* UIImageView+WebCache.m in Sources */,
 				1880660D1CE19041009CD9DE /* MASViewConstraint.m in Sources */,
 				1880660C1CE19041009CD9DE /* MASViewAttribute.m in Sources */,
+				182B35B41CF546A80096574B /* MBProgressHUD+MH.m in Sources */,
 				188066101CE19041009CD9DE /* View+MASAdditions.m in Sources */,
 				188066351CE19DB9009CD9DE /* MHPlayerController.m in Sources */,
 				188066251CE19041009CD9DE /* MHConstant.m in Sources */,

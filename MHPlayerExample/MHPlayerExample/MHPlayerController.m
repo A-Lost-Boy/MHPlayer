@@ -9,6 +9,7 @@
 #import "MHPlayerController.h"
 #import "MHPlayer.h"
 #import "MHPlayView.h"
+#import "MHConstant.h"
 @interface MHPlayerController () <MHPlayViewDelegate>
 @property (nonatomic , weak) MHPlayer *player;
 @property (nonatomic , weak) MHPlayView  *playView ;

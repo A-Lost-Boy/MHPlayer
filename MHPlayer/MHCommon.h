@@ -13,7 +13,8 @@
  *  比较实用的宏定义
  */
 
-//
+
+//弱指针
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 
@@ -34,15 +35,20 @@
 
 //1.日记输出宏
 #ifdef DEBUG // 调试状态, 打开LOG功能
-#define MyLog(...) NSLog(__VA_ARGS__)
+#define MHLog(...) NSLog(__VA_ARGS__)
 #else // 发布状态, 关闭LOG功能
-#define MyLog(...)
+#define MHLog(...)
 #endif
 
+//打印方法
+#define MHLogFunc MHLog(@"%s", __func__)
 
 
 
-//2.严谨的判断
+
+
+
+//严谨的判断
 #define IS_IPAD   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
@@ -60,16 +66,16 @@
 
 
 //3.颜色
-#define YBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define MHColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 //4.颜色+透明度
-#define YBAlphaColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define MHAlphaColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 
 
 //4.随机色
-#define YBRandomColor YBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define MHRandomColor YBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 //5.根据rgbValue获取值
-#define YBColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define MHColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 //6.是否为iOS7+
 #define kIOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
@@ -89,10 +95,10 @@
 #define kIOSVersion [[[UIDevice currentDevice] systemVersion] floatValue]
 
 //7.销毁打印
-#define kDealloc MyLog(@"=========%@彻底销毁了========",[self class])
+#define kDealloc MHLog(@"=========%@彻底销毁了========",[self class])
 
 //11.打印失败信息
-#define kLogError MyLog(@"网络请求失败：===%@\n===%@",[self class] ,error.description)
+#define kLogError MHLog(@"网络请求失败：===%@\n===%@",[self class] ,error.description)
 
 //9.是否为空对象
 #define kObjectIsNil(__object)     ((nil == __object) || [__object isKindOfClass:[NSNull class]])
@@ -127,19 +133,10 @@ self.automaticallyAdjustsScrollViewInsets = NO;\
 #define kHalfWidth  (self.frame.size.width * 0.5f)
 #define kHalfHeight (self.frame.size.height * 0.5f)
 
-//1.日记输出宏
-#ifdef DEBUG // 调试状态, 打开LOG功能
-#define MHLog(...) NSLog(__VA_ARGS__)
-#else // 发布状态, 关闭LOG功能
-#define MHLog(...)
-#endif
 
 
-//打印方法
-#define MHLogFunc MHLog(@"%s", __func__)
 
-#import "MHConstant.h"
-#import "MBProgressHUD+MH.h"
-#import "Colours.h"
+
+
 
 #endif /* Constant_h */
