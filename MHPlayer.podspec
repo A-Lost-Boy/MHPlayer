@@ -8,16 +8,12 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/CoderMikeHe/MHPlayer"
   s.license      = "MIT"
-  s.authors      = {"Mike_He" => "491273090@qq.com"}
+  s.authors      = {"CoderMikeHe" => "491273090@qq.com"}
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/CoderMikeHe/MHPlayer.git", :tag => s.version }
   s.source_files  = "MHPlayer", "MHPlayer/**/*.{h,m}"
-  
-  s.source_files  = "MHPlayer","MHPlayerExample/MHPlayerExample/Main/Category/**/*.{h.m}"
   s.exclude_files = "Classes/Exclude"
- # s.public_header_files = "MHPlayerExample/MHPlayerExample/Main/Category/MBProgressHUD+MH.h"
   s.resource     = "MHPlayer/MHPlayer.bundle"
-  s.frameworks   = "UIKit", "MediaPlayer"
   s.dependency 'Masonry'
   s.dependency 'MBProgressHUD'
   s.dependency 'Colours'

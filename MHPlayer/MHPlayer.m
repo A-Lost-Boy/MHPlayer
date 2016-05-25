@@ -6,9 +6,8 @@
 //  Copyright © 2016年 Mike_He. All rights reserved.
 //
 
-
 /**
- *              Masonry使用小结:
+ *    Masonry使用小结:
  1.
  在Masonry中，and,with都没有具体操作，仅仅是为了提高程序的可读性
  make.left.and.top.mas_equalTo(20);
@@ -20,6 +19,7 @@
  我一般将数值类型的约束用mas_equalTo，而相对于某个控件，或者某个控件的某个约束，我会使用equalTo，如：
  make.size.mas_equalTo(CGSizeMake(100, 100));
  make.center.equalTo(weakSelf.view);
+ 
  
  1.可以看到 mas_equalTo只是对其参数进行了一个BOX操作(装箱) MASBoxValue
  所支持的类型 除了NSNumber支持的那些数值类型之外 就只支持CGPoint CGSize UIEdgeInsets
@@ -67,8 +67,6 @@
 #import "MHCommon.h"
 #import "Colours.h"
 #import "Masonry.h"
-#import "MBProgressHUD.h"
-#import "MBProgressHUD+MH.h"
 /**
  *  发送单击视频的通知
  */
@@ -315,10 +313,10 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
 
     
     //1.show HUD
-    MBProgressHUD *progressHUD = [MBProgressHUD mh_showMessage:nil toView:self];
-    [progressHUD mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
-    }];
+//    MBProgressHUD *progressHUD = [MBProgressHUD mh_showMessage:nil toView:self];
+//    [progressHUD mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self);
+//    }];
     
     if (self.currentPlayerItem) {
         //已经有视频资源 需要切换视频资源
@@ -485,7 +483,7 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
     if (state != MHPlayerStateBuffering)
     {
         //不是缓存状态 hid hud
-        [MBProgressHUD mh_hideHUDForView:self];
+//        [MBProgressHUD mh_hideHUDForView:self];
     }
     //去掉相同状态
     if (_state == state) return;
@@ -580,10 +578,10 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
                 self.state = MHPlayerStateBuffering;
                 
                 //show hud
-                MBProgressHUD *progressHUD = [MBProgressHUD mh_showMessage:@"" toView:self];
-                [progressHUD mas_remakeConstraints:^(MASConstraintMaker *make) {
-                    make.center.equalTo(self);
-                }];
+//                MBProgressHUD *progressHUD = [MBProgressHUD mh_showMessage:@"" toView:self];
+//                [progressHUD mas_remakeConstraints:^(MASConstraintMaker *make) {
+//                    make.center.equalTo(self);
+//                }];
             }
         }
     }];
@@ -1284,10 +1282,10 @@ static void *PlayViewPlaybackLikelyToKeepUpObservationContext = &PlayViewPlaybac
     }else if (context == PlayViewPlaybackBufferEmptyObservationContext)
     {
         //show HUD
-        MBProgressHUD *progressHUD = [MBProgressHUD mh_showMessage:@"" toView:self];
-        [progressHUD mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
-        }];
+//        MBProgressHUD *progressHUD = [MBProgressHUD mh_showMessage:@"" toView:self];
+//        [progressHUD mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.center.equalTo(self);
+//        }];
         //监听播放器在缓冲数据的状态
         if(playerItem.playbackBufferEmpty)
         {
